@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      div {
+        height: 100vh;
+      }
+      .bg1 {
+        background: skyblue;
+      }
+      .bg2 {
+        background: rgb(29, 185, 94);
+      }
+      .bg3 {
+        background: rgb(230, 208, 10);
+      }
+      .bg4 {
+        background: rgb(165, 20, 68);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg1">
+      <h1>page1 请按上下键滚动</h1>
+    </div>
+    <div class="bg2"><h1>page2</h1></div>
+    <div class="bg3"><h1>page3</h1></div>
+    <div class="bg4"><h1>page4</h1></div>
+
+    <script>
+      window.onkeydown = function (e) {
+        if (e.key === "ArrowUp") {
+          e.preventDefault();
+          window.scrollBy({
+            top: -window.innerHeight,
+            left: 0,
+            behavior: "smooth",
+          });
+        }
+        if (e.key === "ArrowDown") {
+          e.preventDefault();
+          window.scrollBy({
+            top: window.innerHeight,
+            left: 0,
+            behavior: "smooth",
+          });
+        }
+      };
+    </script>
+  </body>
+</html>
